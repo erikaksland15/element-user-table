@@ -1,18 +1,18 @@
 <template>
   <div class="users">
     <h2>My Users</h2>
-    <div v-for="(user, index) in users" v-bind:key="index" class="currency">
-      {{ user.name }}:
-      <span >
-        {{ user.username }} | {{ user.email }}
-      </span>
-    </div>
+    <UserTable :users="users"/>
   </div>
 </template>
 
 <script>
+import UserTable from './UserTable.vue'
+
 export default {
   name: 'Users',
+  components: {
+    UserTable
+  },
   props: {
     users: Array
   }

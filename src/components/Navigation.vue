@@ -12,8 +12,13 @@ export default {
 </script>
 
 <style scoped>
-  nav .nav-link {
+  .nav-link {
     padding: 12px 16px;
     line-height: 16px;
+    text-decoration: none;
+    color: black;
+  }
+  .nav-link:hover {
+    color: gray;
   }
 </style>

@@ -23,7 +23,7 @@ export default {
   },
   mounted() {
     axios.get(url).then(response => {
-      this.users = response.data
+      this.users = response.data;
     })
   }
 }
