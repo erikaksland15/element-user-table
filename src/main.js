@@ -7,5 +7,10 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  data() {
+    return {
+      users: []
+    }
+  },
   render: h => h(App)
 }).$mount("#app");
