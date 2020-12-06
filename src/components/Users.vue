@@ -1,7 +1,7 @@
 <template>
   <div class="users">
     <h2>My Users</h2>
-    <UserTable :users="users"/>
+    <UserTable :users="users" stripe="true"/>
   </div>
 </template>
 
