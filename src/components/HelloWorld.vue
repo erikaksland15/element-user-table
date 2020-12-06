@@ -36,9 +36,6 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  },
-  mounted() {
-    console.log("loaded helloworld.vue");
   }
 }
 </script>
