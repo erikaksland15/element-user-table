@@ -179,7 +179,6 @@ export default {
           this.users.push(user_to_save);
         }
         console.log('submit success!!!');
-        console.log(this.users);
         this.$router.push('/users/');
       });
     },
