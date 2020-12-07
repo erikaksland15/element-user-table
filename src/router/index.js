@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../components/HelloWorld.vue";
 import Users from "../components/Users.vue";
+import AddEditUser from "../components/AddEditUser.vue";
 
 Vue.use(VueRouter);
 
@@ -12,9 +13,15 @@ const routes = [
     component: Home
   },
   {
-    path: "/users",
+    path: "/users/",
     name: "Users",
     component: Users
+  },
+  {
+    path: "/add-edit-user/",
+    name: "Add Edit User",
+    props: true,
+    component: AddEditUser
   }
 ];
 

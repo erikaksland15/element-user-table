@@ -56,13 +56,17 @@
         label="Actions"
         width="240">
         <template slot-scope="scope">
-          <el-button @click="editUser(scope)" type="primary" icon="el-icon-edit" round> Edit</el-button>
+          <router-link :to="{ name: 'Add Edit User', params: { action: 'Edit', users: tableData, user: scope.row} }" class="btn-edit">
+            <el-button type="primary" icon="el-icon-edit" round> Edit</el-button>
+          </router-link>
           <el-button @click="deleteUser(scope)" type="danger" icon="el-icon-delete" round></el-button>
         </template>
       </el-table-column>
     </el-table>
     <div class="additionalActions">
-      <el-button @click="addUser()" class="btn-add" type="success" round>Add User</el-button>
+      <router-link :to="{ name: 'Add Edit User', params: { action: 'Add', users: tableData } }" class="btn-add" >
+        <el-button type="success" round>Add User</el-button>
+        </router-link>
     </div>
   </div>
 </template>
@@ -79,11 +83,6 @@ export default {
     }
   },
   methods: {
-    editUser(scope) {
-      console.log('Edit User Clicked');
-      //console.log(scope);
-      console.log(scope.row.id);
-    },
     deleteUser(scope) {
       if (confirm('Are you sure you want to Delete this user?\n\nUsername: ' + scope.row.username + '\nEmail: ' + scope.row.email)) {
         // Delete the User from the Users Array
@@ -91,9 +90,6 @@ export default {
         this.users.splice(index, 1);
         console.log('User ID ' + scope.row.id + ' Deleted');
       }
-    },
-    addUser() {
-      console.log('Add User Clicked');
     }
   },
   watch: {
@@ -116,6 +112,9 @@ export default {
   }
   .additionalActions {
     margin-top: 20px;
+  }
+  .btn-edit {
+    margin-right: 10px;
   }
   .btn-add {
     float: right;
